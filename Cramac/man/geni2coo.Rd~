@@ -1,0 +1,46 @@
+\name{geni2coo}
+\alias{geni2coo}
+
+\title{
+geni2coo
+}
+\description{
+The function gives the coordinates of GRM ids.
+}
+\usage{
+geni2coo(id, db, transcript = FALSE)
+}
+%- maybe also 'usage' for other objects documented here.
+\arguments{
+  \item{id}{
+GRM ids parent gene or transcript.
+}
+  \item{db}{
+database to use.
+}
+  \item{transcript}{
+If TRUE use transcript ids, (default FALSE)
+}
+}
+\details{
+ Working set database \cr
+/home/marco/maizeseq/B73_5a_cdna/B73_5a_cdna \cr
+Filtered set database \cr
+/home/marco/maizeseq/B73_5b_cdna/B73_5b_cdna \cr
+}
+\value{
+Table with transcript ids, coordinates and parent genes.
+}
+
+\author{
+Marco Fracassetti
+}
+
+\examples{
+#db="/home/marco/maizeseq/B73_5b_cdna/B73_5b_cdna"
+#id=readLines("/home/marco/biosegen_array/definitivo/setdiff_GRM")
+#ris=geni2coo(id,db)
+}
+
+\keyword{ ~kwd1 }
+\keyword{ ~kwd2 }

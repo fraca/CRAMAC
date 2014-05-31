@@ -1,0 +1,54 @@
+\name{align_control}
+\alias{align_control}
+
+\title{
+align_control
+}
+\description{
+The function check where the primers anneal in the maize genome.
+}
+\usage{
+align_control(primer_L, primer_R, bp_max = 10000, e_value = 10,
+ lista = "/home/marco/maizeseq/ZmB73_RefGen_v2/lista_chr",
+ dir_chr = "/home/marco/maizeseq/ZmB73_RefGen_v2/")
+}
+
+\arguments{
+  \item{primer_L}{
+Left primer.
+}
+  \item{primer_R}{
+Right primer.
+}
+  \item{bp_max}{
+Max bp between primers, (default 1000).
+}
+  \item{e_value}{
+Score for the blast, (default 10).
+}
+  \item{lista}{
+Filename of chromosome list, 
+(default "/home/marco/maizeseq/ZmB73_RefGen_v2/lista_chr").
+}
+  \item{dir_chr}{
+Directory whit the chromosome data,
+(default "/home/marco/maizeseq/ZmB73_RefGen_v2/").
+}
+}
+
+\value{
+print where the primers anneal.
+}
+
+\author{
+Marco Fracassetti
+}
+
+\examples{
+#primer_L="CAATTAAGCGAGGCGATGAGC"
+#primer_R=revcomp("CTCTACATCATCGCGCAGTG")
+#align_control(primer_L,primer_R)
+}
+
+\keyword{ ~kwd1 }
+\keyword{ ~kwd2 }

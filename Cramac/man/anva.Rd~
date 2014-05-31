@@ -1,0 +1,54 @@
+\name{anva}
+\alias{anva}
+
+\title{
+anva
+}
+\description{
+The function calculate test of variance and post-hoc test.
+}
+\usage{
+anva(dati, gruppi, p_value = 0.05)
+}
+
+\arguments{
+  \item{dati}{
+ Vector with dependent variables.
+}
+  \item{gruppi}{
+ Vector with indipendent variables (type factor).
+}
+  \item{p_value}{
+ p value for significance (default 0.05)
+}
+}
+\details{
+ For normality shapiro test. \cr
+ For omoscedasticity bartlett and fligner tests. \cr
+ N v O v ANOVA \cr
+ N v O n Welch one-way ANOVA \cr
+ N n O v Kruskal \cr
+ N n O n Friedman \cr
+}
+\value{
+ Print in terminal the information about tests. \cr
+ Return table with means standar deviation and comparison group of post-hoc tests.
+}
+
+\author{
+ Marco Fracassetti
+}
+
+\examples{
+ a <- c(13.47, 10.21, 15.10, 14.65, 9.03, 15.14, 6.09, 3.43, 5.95, 10.72, 10.01, 8.17)
+ b <- c(4.02, 14.03, 3.09, 10.25, 6.25, 1.00, 7.50, 10.18, 6.07, 2.03, 4.17, 7.28)
+ c <- c(10.56, 14.61, 11.88, 11.43, 9.73, 12.37, 3.82, 13.04, 13.28, 15.28, 12.90, 10.98)
+ d <- c(7.74, 2.77, 10.29, 4.03, 10.23, 7.67, 7.93, 6.75, 5.60, 8.19, 2.02, 7.88)
+ 
+ dati <- c(a,b,c,d)
+ gruppi = factor(rep(c("uno","tre","bla","fgh"), each = 12))
+ ta=anva(dati,gruppi)
+}
+
+\keyword{ ~kwd1 }
+\keyword{ ~kwd2 }

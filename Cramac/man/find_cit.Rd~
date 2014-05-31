@@ -1,0 +1,39 @@
+\name{find_cit}
+\alias{find_cit}
+
+\title{
+find_cit
+}
+\description{
+the function search citations (text between parenthesis) in txt file 
+}
+\usage{
+find_cit(file_in, file_out)
+}
+%- maybe also 'usage' for other objects documented here.
+\arguments{
+  \item{file_in}{
+filename input
+}
+  \item{file_out}{
+filename output
+}
+}
+
+\value{
+File with citations
+}
+
+\author{
+Marco Fracassetti
+}
+
+\examples{
+#esempio
+# file_in="/home/marco/Dropbox/art/maydica/cit"
+# file_out="/home/marco/Dropbox/art/maydica/cit_ris"
+# find_cit(file_in,file_out)
+}
+
+\keyword{ ~kwd1 }
+\keyword{ ~kwd2 }

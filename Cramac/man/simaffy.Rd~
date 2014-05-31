@@ -1,0 +1,64 @@
+\name{simaffy}
+\alias{simaffy}
+\title{
+simaffy
+}
+\description{
+the function analyzes affymetrix data.
+}
+\usage{
+simaffy(dir, conf, fold_change = 0.58, p_value = 0.05, 
+nome_covdesc = "covdesc.txt", heat_flag = FALSE, graph_flag = FALSE)
+}
+%- maybe also 'usage' for other objects documented here.
+\arguments{
+  \item{dir}{
+ directory where the CEL files are placed
+}
+  \item{conf}{
+ list of the comparison that will be done
+}
+  \item{fold_change}{
+ fold change for significant spot (default 0.58)
+}
+  \item{p_value}{
+ p value for significant spot (default 0.05)
+}
+  \item{nome_covdesc}{
+ name of the file covdesc (default "covdesc.txt")
+}
+  \item{heat_flag}{
+  if TRUE heatmap will be done (default FALSE)
+}
+  \item{graph_flag}{
+  if TRUE heatmap will be done (default FALSE)
+}
+}
+\details{
+  use the package simpleaffy
+}
+\value{
+  Table of comparisons. \cr
+  Pre-processing image if graph_flag = TRUE. \cr
+  heatmap if heat_flag = TRUE
+}
+
+\author{
+Marco Fracassetti
+}
+
+\examples{
+ dir="/home/marco/fusarium/array/"
+# conf=list(c("fus","open"),c("fus","h2o"),c("h2o","open"))
+# simaffy(dir,conf)
+# fus_open=read.table("/home/marco/fusarium/array/ris_fus_open.txt")
+# fus_open=rownames(fus_open)
+# fus_h2o=read.table("/home/marco/fusarium/array/ris_fus_h2o.txt")
+# fus_h2o=rownames(fus_h2o)
+# h2o_open=read.table("/home/marco/fusarium/array/ris_h2o_open.txt")
+# h2o_open=rownames(h2o_open)
+# ris=setdiff(intersect(fus_open,fus_h2o),h2o_open)
+}
+
+\keyword{ ~kwd1 }
+\keyword{ ~kwd2 }

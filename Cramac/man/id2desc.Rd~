@@ -1,0 +1,105 @@
+\name{id2desc}
+\alias{id2desc}
+%- Also NEED an '\alias' for EACH other topic documented here.
+\title{
+%%  ~~function to do ... ~~
+}
+\description{
+%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+}
+\usage{
+id2desc(id, tipo, fout = "/tmp/desc_out")
+}
+%- maybe also 'usage' for other objects documented here.
+\arguments{
+  \item{id}{
+%%     ~~Describe \code{id} here~~
+}
+  \item{tipo}{
+%%     ~~Describe \code{tipo} here~~
+}
+  \item{fout}{
+%%     ~~Describe \code{fout} here~~
+}
+}
+\details{
+%%  ~~ If necessary, more details than the description above ~~
+}
+\value{
+%%  ~Describe the value returned
+%%  If it is a LIST, use
+%%  \item{comp1 }{Description of 'comp1'}
+%%  \item{comp2 }{Description of 'comp2'}
+%% ...
+}
+\references{
+%% ~put references to the literature/web site here ~
+}
+\author{
+%%  ~~who you are~~
+}
+\note{
+%%  ~~further notes~~
+}
+
+%% ~Make other sections like Warning with \section{Warning }{....} ~
+
+\seealso{
+%% ~~objects to See Also as \code{\link{help}}, ~~~
+}
+\examples{
+##---- Should be DIRECTLY executable !! ----
+##-- ==>  Define data, use random,
+##--	or do  help(data=index)  for the standard data sets.
+
+## The function is currently defined as
+function (id, tipo, fout = "/tmp/desc_out") 
+{
+    ff = file(fout, "w")
+    desc_tot = NULL
+    if (tipo == "array") {
+        anno = readLines("/home/marco/maizeseq/maizearray.v4.annotation.txt")
+        for (i in 1:length(id)) {
+            desc = anno[grep(id[i], anno)]
+            for (j in 1:length(desc)) {
+                cat(desc[j], "\n", file = ff)
+            }
+            desc_tot = c(desc_tot, desc)
+        }
+    }
+    if (tipo == "affy") {
+        anno = readLines("/home/marco/maizeseq/Maize.na32.annot.csv")
+        for (i in 1:length(id)) {
+            desc = anno[grep(id[i], anno)]
+            for (j in 1:length(desc)) {
+                cat(desc[j], "\n", file = ff)
+            }
+            desc_tot = c(desc_tot, desc)
+        }
+    }
+    if (tipo == "GRM") {
+        anno = readLines("/home/marco/maizeseq/display.txt")
+        anno2 = readLines("/home/marco/maizeseq/xref.txt")
+        idp = gsub("_.+$", "", id)
+        idp = unique(idp)
+        for (i in 1:length(idp)) {
+            cat(idp[i], "\n\n", file = ff)
+            cat("trascritti:", id[grep(idp[i], id)], "\n\n", 
+                file = ff)
+            desc = anno[grep(idp[i], anno)]
+            desc = c(desc, anno2[grep(idp[i], anno2)])
+            for (j in 1:length(desc)) {
+                cat(desc[j], "\n", file = ff)
+            }
+            cat("\n\n", file = ff)
+            desc_tot = c(desc_tot, desc)
+        }
+    }
+    close(ff)
+    return(desc_tot)
+  }
+}
+% Add one or more standard keywords, see file 'KEYWORDS' in the
+% R documentation directory.
+\keyword{ ~kwd1 }
+\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

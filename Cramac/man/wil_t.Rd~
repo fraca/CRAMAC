@@ -1,0 +1,47 @@
+\name{wil_t}
+\alias{wil_t}
+
+\title{
+wil_t
+}
+\description{
+The function calculate test of variance and post-hoc test, for samples with 2 levels of indipendent variable.
+}
+\usage{
+wil_t(dati, gruppi)
+}
+%- maybe also 'usage' for other objects documented here.
+\arguments{
+  \item{dati}{
+ Vector with dependent variables.
+}
+  \item{gruppi}{
+ Vector with indipendent variables (type factor).
+}
+}
+\details{
+ For normality shapiro test. \cr
+ T-student test, T-student test Welch approximation, \cr
+ Wilcox test. 
+}
+\value{
+ Print in terminal the information about tests. \cr
+ Return p value.
+}
+
+\author{
+Marco Fracassetti
+}
+
+\examples{
+#  a <- c(13.47, 10.21, 15.10, 14.65, 9.03, 15.14, 
+#6.09, 3.43, 5.95, 10.72, 10.01, 8.17)
+#  b <- c(4.02, 14.03, 3.09, 10.25, 6.25, 
+#1.00, 7.50, 10.18, 6.07, 2.03, 4.17, 7.28)  
+#  dati <- c(a,b)
+#  gruppi = factor(rep(c("uno","tre"), each = 12))
+#  p=wil_t(dati,gruppi)
+}
+
+\keyword{ ~kwd1 }
+\keyword{ ~kwd2 }
