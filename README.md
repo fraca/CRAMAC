@@ -19,4 +19,3 @@ License: GPL-2
 LazyLoad: yes
 
 
-Fracassetti M, Lazzaroni N, Balconi C, Hartings H (2013) Osmolyte-related recovery of the opaque-6 lethal phenotype in Zea mays L. Maydica, 58, 322–327.
