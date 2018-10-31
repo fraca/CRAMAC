@@ -4,7 +4,8 @@ CRAMAC
 Functions in R. Microarray analysis, gene ontology, maize.
 --------------
 
-Several functions in R that I used some years ago at the [CRA-MAC](http://sito.entecra.it/portale/cra_dati_istituto.php?id=224).
+Several functions in R. I used them some years ago at the [CRA-MAC](http://sito.entecra.it/portale/cra_dati_istituto.php?id=224).
+
 
 Package: CRAMAC  
 Type: Package  
